@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Where is Waldo?</title>
+  </head>
+  <body>
+    <h1> Where is Waldo? </h1>
+    <div id="playScreen">
+      <h2> Click on the picture and identify the character. </h2>
+      <h2 id="timer"> 00:00</h2>
+      <div id="containerWaldoSearch">
+        <%= image_tag "Waldo_#{@pictureId}", {id: "picWaldoSearch"}  %>
+      </div>
+      <div id="searchLegend">
+        <% @characters.each do |character| %>
+          <span id=<%=character.name%> class="itemLegend">
+            <%= image_tag "pic#{@pictureId}/#{character.name}", {class: "picLegend"} %>
+            <span class="nameLegend"><%=character.name%></span>
+          </span>
+        <%end%>
+      </div>
+    </div>
+
+    <div id="formScore" class="invisible">
+      Please give your name.
+      <%= form_for(:player, url: players_path)  do |f|%>
+        <%= f.label  :name%>
+        <%= f.text_field :name, :required => true %>
+        <div> Your time: <span id="timeResult"></span></div>
+        <input type="hidden" name="player[score]" id="player_score"/>
+        <%= f.submit "Submit" %>
+      <%end%>
+    </div>
+
+  <%= content_tag :div, id: "pictureId", data: {pictureId: @pictureId} do %>
+  <% end %>
+  <%= content_tag :div, id: "characters", data: {characters: @characters} do %>
+  <% end %>
+  </body>
+
+</html>

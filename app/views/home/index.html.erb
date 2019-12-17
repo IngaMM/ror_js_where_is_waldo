@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Where is Waldo?</title>
+  </head>
+  <body>
+    <h1> Where is Waldo? </h1>
+      <h2> Choose a picture for the game! </h2>
+      <div id=chooseScreen>
+        <%= form_tag("/playscreen", method: "get") do %>
+        <div>
+          <div class="radio">
+            <%= radio_button_tag(:pic_id, "1", :checked => true) %>
+            <%= label_tag(:pic_id, "Picture 1") %>
+          </div>
+          <%= image_tag "Waldo_1", {class: "picWaldoSmall"}  %>
+        </div>
+        <div>
+          <div class="radio">
+            <%= radio_button_tag(:pic_id, "2") %>
+            <%= label_tag(:pic_id, "Picture 2") %>
+          </div>
+          <%= image_tag "Waldo_2", {class: "picWaldoSmall"}  %>
+        </div>
+        <%= submit_tag("Choose picture", {id: "submitButton"}) %>
+        <% end %>
+      </div>
+  </body>
+
+</html>
