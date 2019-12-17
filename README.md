@@ -14,6 +14,8 @@ I used Ruby on Rails (backend), HTML, CSS, Javascript (frontend).
 Background to 'Where is Waldo': https://en.wikipedia.org/wiki/Where's_Wally%3F
 The large photograph contains several persons the user is meant to find. The user will make selections for each character and they will get feedback on whether they are correct or not. The best results are stored.
 
+A live version of this app can be found at http://shrouded-mesa-79984.herokuapp.com/
+
 The pictures were taken from:
 https://tse4-mm.cn.bing.net/th?id=OIP.qWo50pzruTfSuX2iJQds9gHaEK&w=300&h=168&c=7&o=5&dpr=2&pid=1.7
 https://tse1-mm.cn.bing.net/th?id=OIP.OI7xlJmsf46ruTQPe_7MOAHaFJ&w=266&h=181&c=7&o=5&dpr=2&pid=1.7
