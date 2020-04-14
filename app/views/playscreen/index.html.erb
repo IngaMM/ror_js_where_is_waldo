@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Where is Waldo?</title>
+    <title>Face search</title>
   </head>
   <body>
-    <h1> Where is Waldo? </h1>
-    <div id="playScreen">
-      <h2> Click on the picture and identify the character. </h2>
-      <h2 id="timer"> 00:00</h2>
+    <h1> Face search </h1>
+    <div id="playScreen" >
+      <h2> Click on the picture and identify the face. </h2>
+      <p id="timer"> 00:00</p>
       <div id="containerWaldoSearch">
         <%= image_tag "Waldo_#{@pictureId}", {id: "picWaldoSearch"}  %>
       </div>
       <div id="searchLegend">
-        <% @characters.each do |character| %>
-          <span id=<%=character.name%> class="itemLegend">
+        <% @characters.each_with_index do |character, index| %>
+          <div id=<%=character.name%> class="itemLegend">
             <%= image_tag "pic#{@pictureId}/#{character.name}", {class: "picLegend"} %>
-            <span class="nameLegend"><%=character.name%></span>
-          </span>
+            <span class="nameLegend"><%="Face " + (index+1).to_s%></span>
+          </div>
         <%end%>
       </div>
     </div>
 
-    <div id="formScore" class="invisible">
-      Please give your name.
+    <div id="formScore" class="invisible" >
+      <div class="congrat">
+      <b>Congratulations!</b>
+      </div>
+      <div>
+        <div class="congrat">
+         Please give your name for the high-score list.
+         </div>
       <%= form_for(:player, url: players_path)  do |f|%>
         <%= f.label  :name%>
         <%= f.text_field :name, :required => true %>
         <div> Your time: <span id="timeResult"></span></div>
         <input type="hidden" name="player[score]" id="player_score"/>
-        <%= f.submit "Submit" %>
+        <%= f.submit "Submit", {class: "submitButton"} %>
       <%end%>
     </div>
 

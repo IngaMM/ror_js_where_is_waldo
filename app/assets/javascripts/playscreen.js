@@ -1,4 +1,5 @@
-let targetBoxSize = 80; // #targetBox {width & height} from home.scss
+let targetBoxSizeX = 247; // #targetBox {width} from playscreen.scss
+let targetBoxSizeY = 259; // #targetBox {height} from playscreen.scss
 let counter;
 let timer;
 let currentTime;
@@ -61,8 +62,8 @@ function showTargetBox(
   //Create a new targetBox
   let targetBox = document.createElement("div");
   targetBox.id = "targetBox";
-  targetBox.style.left = evt.offsetX - targetBoxSize / 2 + "px";
-  targetBox.style.top = evt.offsetY - targetBoxSize / 2 + "px";
+  targetBox.style.left = evt.offsetX - targetBoxSizeX / 2 + "px";
+  targetBox.style.top = evt.offsetY - targetBoxSizeY / 2 + "px";
   container.appendChild(targetBox);
   showDropDown(
     evt,
@@ -82,14 +83,16 @@ function showDropDown(
 ) {
   let clickedOffsetX = evt.offsetX;
   let clickedOffsetY = evt.offsetY;
+  //console.log(clickedOffsetX);
+  //console.log(clickedOffsetY);
   let dropDown = document.createElement("div");
   dropDown.id = "dropDown";
-  dropDown.style.left = clickedOffsetX + targetBoxSize / 2 + 15 + "px";
-  dropDown.style.top = clickedOffsetY - targetBoxSize / 2 + "px";
+  dropDown.style.left = clickedOffsetX + targetBoxSizeX / 2 + 15 + "px";
+  dropDown.style.top = clickedOffsetY - targetBoxSizeY / 2 + "px";
   container.appendChild(dropDown);
   for (let i = 0; i < characterNames.length; i++) {
     let item = document.createElement("div");
-    item.innerHTML = characterNames[i];
+    item.innerHTML = "Face " + (i + 1);
     item.classList.add("characterName");
     item.addEventListener("click", () => {
       compareCoordinates(
@@ -118,10 +121,10 @@ function compareCoordinates(
   let characterIndex = characterNames.findIndex(characterName => {
     return selectedCharacterName === characterName;
   });
-  let lowerLimitX = characterOffsetXs[characterIndex] - targetBoxSize / 2;
-  let upperLimitX = characterOffsetXs[characterIndex] + targetBoxSize / 2;
-  let lowerLimitY = characterOffsetYs[characterIndex] - targetBoxSize / 2;
-  let upperLimitY = characterOffsetYs[characterIndex] + targetBoxSize / 2;
+  let lowerLimitX = characterOffsetXs[characterIndex] - targetBoxSizeX / 2;
+  let upperLimitX = characterOffsetXs[characterIndex] + targetBoxSizeX / 2;
+  let lowerLimitY = characterOffsetYs[characterIndex] - targetBoxSizeY / 2;
+  let upperLimitY = characterOffsetYs[characterIndex] + targetBoxSizeY / 2;
   if (
     clickedOffsetX >= lowerLimitX &&
     clickedOffsetX <= upperLimitX &&
@@ -135,14 +138,14 @@ function compareCoordinates(
       characterOffsetYs[characterIndex]
     );
     if (counter > 0) {
-      alert("Correct! " + counter + " Characters left.");
+      alert("Correct! " + counter + " faces left.");
     } else {
       // Stop timer
       stopClock();
       let timer = document.getElementById("timer");
       let time = timer.innerHTML;
 
-      alert("Congratulations! You identified all characters.");
+      alert("Congratulations! You identified all faces.");
       // Clear screen
       let playScreen = document.getElementById("playScreen");
       while (playScreen.firstChild) {
@@ -170,8 +173,8 @@ function fixBox(offsetX, offsetY) {
   // Create fixedBox
   let fixedBox = document.createElement("div");
   fixedBox.classList.add("fixedBox");
-  fixedBox.style.left = offsetX - targetBoxSize / 2 + "px";
-  fixedBox.style.top = offsetY - targetBoxSize / 2 + "px";
+  fixedBox.style.left = offsetX - targetBoxSizeX / 2 + "px";
+  fixedBox.style.top = offsetY - targetBoxSizeY / 2 + "px";
   container.appendChild(fixedBox);
 }
 

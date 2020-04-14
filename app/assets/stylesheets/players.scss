@@ -1,3 +1,18 @@
+#highScoreScreen {
+  text-align: center;
+}
+
 #highScores {
   margin: auto;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#highScores th,
+#highScores td {
+  padding: 5px;
+}
+
+.restart {
+  font-size: 30px;
 }

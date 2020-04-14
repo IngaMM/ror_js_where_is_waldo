@@ -1,21 +1,66 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #999966;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
 #chooseScreen {
-  width: 400px;
-  margin: auto;
+  text-align: center;
+  padding-bottom: 20px;
+  height: 100%;
+}
+
+h1 {
+  margin-top: 0;
+  padding-top: 20px;
+  font-size: 55px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+label {
+  font-size: 25px;
+  line-height: 2;
+}
+
+input[type="radio"] {
+  position: relative;
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+  transform: scale(1.5);
+  margin-right: 10px;
+  bottom: 5px;
+}
+
+.submitButton {
+  margin-top: 20px;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.submitButton:hover {
+  color: white;
+  background-color: gray;
+}
+
+.picBox {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .picWaldoSmall {
-  width: 300px;
-  height: 169px;
-}
-
-.radio {
-  position: relative;
-  bottom: 85px;
-  display: inline-block;
-}
-
-#submitButton {
-  position: relative;
-  font-size: 30px;
-  top: 10px;
+  width: 40%;
+  min-width: 500px;
+  margin-top: 30px;
 }
