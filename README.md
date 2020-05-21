@@ -1,4 +1,4 @@
-FACE SEARCH (a variant of the popular game WHERE IS WALDO)
+WHERE IS WALDO (FACE SEARCH)
 
 By I. Mahle
 
@@ -10,11 +10,11 @@ Instructions
 2. Run "rails server" and open the browser at http://localhost:3000/
 
 Discussion
-I used Ruby on Rails (backend), HTML, CSS, Javascript (frontend).
+I used Ruby on Rails, Javascript, HTML, CSS.
 
-At the beginning of the game the player has the choice between two large pictures with collections of similar faces. He/she has to find the faces in the small pictures inside the big one. For each selection the player will get a feedback on whether he/she is correct or not. The best results are stored in a high-score list.
+This is a fun game written in Ruby on Rails combined with some Javascript. At the beginning of the game the player has the choice between two collections of similar faces. Then he/she has to find the faces of the small pictures inside the big one as quickly as possible. For each choice the player gets feedback on whether he/she is correct or not. The best results are stored in a high-score list. The app is fully responsive and can be viewed on screens of all sizes.
 
-A live version of this app can be found at http://shrouded-mesa-79984.herokuapp.com/
+A live version of this app can be found at http://face-search22.herokuapp.com/
 
 Pictures from https://generated.photos
 
