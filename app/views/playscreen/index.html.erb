@@ -4,6 +4,15 @@
     <title>Face search</title>
   </head>
   <body>
+    <header>
+      All images in this app are taken from <a
+        href="https://generated.photos/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Generated Photos.
+      </a>
+    </header>
     <h1> Face search </h1>
     <div id="playScreen" >
       <h2> Click on the picture and identify the face. </h2>
@@ -37,11 +46,16 @@
         <%= f.submit "Submit", {class: "submitButton"} %>
       <%end%>
     </div>
+    </div>
+
 
   <%= content_tag :div, id: "pictureId", data: {pictureId: @pictureId} do %>
   <% end %>
   <%= content_tag :div, id: "characters", data: {characters: @characters} do %>
   <% end %>
+
+
   </body>
+
 
 </html>
